@@ -110,7 +110,7 @@ Which[
 
 If[ $PathToFCArc==="",
 	(*Test that we can access the FeynCalc repository*)
-	Quiet[testConnection = FCGetUrl["https://github.com/FeynCalc/feyncalc"];];
+	Quiet[testConnection = FCGetUrl["https://gitproxy.click/https://github.com/FeynCalc/feyncalc"];];
 	If[	testConnection===$Failed || !FileExistsQ[testConnection],
 		WriteString["stdout",
 			"It seems that your Mathematica version is unable to ",
@@ -166,7 +166,7 @@ Options[InstallFeynCalcQuiet]=
 	Options[InstallFeynCalc];
 
 Options[InstallFeynArts] = {
-	FeynArtsMirrorLink	-> "https://github.com/FeynCalc/feynarts-mirror/archive/master.zip",
+	FeynArtsMirrorLink	-> "https://get.2sb.org/https://github.com/FeynCalc/feynarts-mirror/archive/master.zip",
 	InstallFeynArtsTo	-> FileNameJoin[{$UserBaseDirectory, "Applications","FeynCalc","FeynArts"}]
 };
 
